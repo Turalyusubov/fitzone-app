@@ -3,7 +3,7 @@ import HeroBannerImage from './../assets/images/HeroBannerImage.jpg'
 
 export default function HeroBanner() {
     return (
-        <div className='p-4 sm:p-12 text-center md:text-left'>
+        <div className='relative p-4 sm:p-12 text-center md:text-left'>
             <div className="hero-left flex flex-col">
                 <p className='text-orange-600 font-bold text-xl mb-4'>FitZone</p>
                 <h2 className='font-bold md:w-4/12 text-4xl mb-6 overflow-hidden'>
@@ -17,8 +17,8 @@ export default function HeroBanner() {
                     Explore exercises</button>
             </div>
             <span className='hidden md:block w-full text-amber-100 text-9xl font-bold mt-10'>Exercise</span>
-            <div className="hero-right w-5/12 hidden md:block absolute top-0 right-12">
-                <img className='w-full h-full rounded-bl-3xl' src={HeroBannerImage} alt="HeroBanner image" />
+            <div className="hero-right w-5/12 h-full hidden md:block absolute -top-20 right-12">
+                <img className='w-full h-full object-cover object-top rounded-bl-3xl' src={HeroBannerImage} alt="HeroBanner image" />
             </div>
         </div>
     )
