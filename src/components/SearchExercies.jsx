@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { exercisesOptions, fetchData } from '../utils/fetchData'
+import HorizontalScrollBar from './HorizontalScrollBar'
 
-export default function SearchExercies() {
+export default function SearchExercies({ setExercises, bodyPart, setBodyPart }) {
     const [searchValue, setSearchValue] = useState('')
-    const [exercises, setExercises] = useState([])
     const [bodyParts, setBodyParts] = useState([])
 
     useEffect(() => {
@@ -59,6 +59,13 @@ export default function SearchExercies() {
                     h-10 p-2 rounded-r-lg text-yellow-50 w-2/6 md:w-1/6 xl:w-1/12'
                     onClick={handleSearch}
                 >Search</button>
+            </div>
+            <div className="">
+                <HorizontalScrollBar
+                    data={bodyParts}
+                    bodyPart={bodyPart}
+                    setBodyPart={setBodyPart}
+                />
             </div>
         </div>
     )

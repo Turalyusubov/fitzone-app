@@ -13,3 +13,7 @@
 body {
     font-family: 'Rubik', sans-serif;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
