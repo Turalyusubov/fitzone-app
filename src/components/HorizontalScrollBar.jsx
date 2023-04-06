@@ -16,14 +16,14 @@ export default function HorizontalScrollBar({ data, bodyPart, setBodyPart }) {
     return (
         <div className='mt-12'>
             <div
-                className="flex gap-5 md:gap-10 overflow-x-auto scrollbar-hide 
+                className="flex gap-5 md:gap-10 overflow-x-auto overflow-y-hidden scrollbar-hide 
                 snpa-start snap-x snap-mandatory scroll-smooth p-2"
                 ref={scrollBarRef}
             >
                 {data.map((item) => (
                     <div className=""
                         key={item.id || item}
-                        itemId={item.id || item}
+                        itemID={item.id || item}
                         title={item.id || item}
                     >
                         <BodyPart
