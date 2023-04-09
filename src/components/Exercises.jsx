@@ -5,17 +5,9 @@ import ExerciseCard from './ExerciseCard'
 import Pagination from './Pagination'
 
 export default function Exercises({ exercises, setExercises, bodyPart }) {
-    // // pagination
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [postsPerPage] = useState(4);
-
-    // // Get current posts
-    // const indexOfLastPost = currentPage * postsPerPage;
-    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // const currentPosts = exercises.slice(indexOfFirstPost, indexOfLastPost);
-
-    // // Change page
-    // const paginate = pageNumber => setCurrentPage(pageNumber);
+    const [itemsToShow, setItemsToShow] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [pages, setPages] = useState([])
 
     useEffect(() => {
         const fetchExercisesData = async () => {
@@ -39,21 +31,30 @@ export default function Exercises({ exercises, setExercises, bodyPart }) {
         fetchExercisesData()
     }, [bodyPart])
 
+    useEffect(() => {
+        if (!itemsToShow) {
+            setItemsToShow(exercises.slice(0, 8))
+        }
+    }, [])
+
     return (
         <div className='p-4 sm:p-12' id='exercises-section'>
             <h4 className='ml-auto mr-auto capitalize text-center 
             sm:w-1/2 font-bold text-xl sm:text-2xl md:text-4xl mb-5 md:mb-12'>Showing Results</h4>
             <div className="exercises flex flex-wrap justify-center">
-                {exercises.map((exercise, index) => (
+                {itemsToShow.map((exercise, index) => (
                     <ExerciseCard key={index} exercise={exercise} />
                 ))}
             </div>
-            {/* <Pagination
-                postsPerPage={postsPerPage}
-                totalPosts={exercises.length}
-                paginate={paginate}
-            /> */}
-
+            <Pagination
+                data={exercises}
+                itemsPerPage={8}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                setItemsToShow={setItemsToShow}
+                setPages={setPages}
+                pages={pages}
+            />
         </div>
     )
 }
