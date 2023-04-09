@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import BodyPart from './BodyPart'
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+import ExerciseCard from './ExerciseCard';
 
-export default function HorizontalScrollBar({ data, bodyPart, setBodyPart }) {
+export default function HorizontalScrollBar({ data, bodyPart, setBodyPart, isBodyParts }) {
     const scrollBarRef = useRef(null);
 
     const handleLeftArrowClick = () => {
