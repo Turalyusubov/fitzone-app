@@ -14,8 +14,8 @@ export default function ExerciseCard({ exercise }) {
                     loading='lazy'
                 />
                 <div className="bg-white p-2 flex gap-2">
-                    <span className='capitalize text-white cursor-pointer hover:bg-red-400 text-sm rounded-full px-3 py-1 bg-red-300'>{exercise.bodyPart}</span>
-                    <span className='capitalize text-white cursor-pointer hover:bg-yellow-400 text-sm rounded-full px-3 py-1 bg-yellow-300'>{exercise.target}</span>
+                    <span className='capitalize flex items-center text-white cursor-pointer hover:bg-red-400 text-sm rounded-full px-3 py-1 bg-red-300'>{exercise.bodyPart}</span>
+                    <span className='capitalize flex items-center text-white cursor-pointer hover:bg-yellow-400 text-sm rounded-full px-3 py-1 bg-yellow-300'>{exercise.target}</span>
                 </div>
 
                 <p className='bg-white capitalize p-2 font-bold'>{exercise.name}</p>
