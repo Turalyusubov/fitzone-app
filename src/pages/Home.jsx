@@ -8,7 +8,7 @@ export default function Home() {
     const [bodyPart, setBodyPart] = useState('all')
     const [exercises, setExercises] = useState([])
     return (
-        <div>
+        <div className=''>
             <HeroBanner />
             <SearchExercies
                 setExercises={setExercises}

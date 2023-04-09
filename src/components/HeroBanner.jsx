@@ -11,10 +11,10 @@ export default function HeroBanner() {
                     and repeat
                 </h2>
                 <p className='mb-4'>Check out the most effective exercises</p>
-                <button className='self-center md:self-auto sm:w-1/2 md:w-4/12 rounded bg-orange-600 hover:bg-orange-700 
-                transition duration-300 text-yellow-50 px-4 py-2 
+                <a href='#exercises-section' className='self-center md:self-auto sm:w-1/2 md:w-4/12 rounded bg-orange-600 hover:bg-orange-700 
+                transition duration-300 text-yellow-50 px-4 py-2 text-center 
                 uppercase'>
-                    Explore exercises</button>
+                    Explore exercises</a>
             </div>
             <span className='hidden md:block w-full text-amber-100 text-9xl font-bold mt-10'>Exercise</span>
             <div className="hero-right w-5/12 h-full hidden md:block absolute -top-20 right-12">
