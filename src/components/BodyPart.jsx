@@ -9,7 +9,6 @@ export default function BodyPart({ item, bodyPart, setBodyPart }) {
         <div className={'bg-white w-32 h-32 md:w-60 md:h-60 shadow rounded group ' + style}
             onClick={() => {
                 setBodyPart(item)
-                window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
             }}
         >
             <Link className='w-full h-full flex flex-col group-hover:scale-125 transition duration-300 gap-1 md:gap-2 items-center justify-center'>

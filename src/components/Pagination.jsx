@@ -43,27 +43,36 @@ export default function Pagination({ data, setItemsToShow, itemsPerPage, current
 
     return (
         <div className='text-center flex gap-1 justify-center mt-4'>
-            <div className="flex gap-2">
-                {currentPage !== 1 && <p className='cursor-pointer hover:bg-orange-300 hover:-translate-x-2 transition duration-300 flex items-center bg-orange-200 px-1 pl-4 pr-2 rounded-l-full disabled' onClick={currentPage !== 1 ? previousPage : ''}>
+            <div className="sm:flex sm:gap-2">
+                {currentPage !== 1 && <p className=' hidden sm:block cursor-pointer hover:bg-orange-300 hover:-translate-x-2 transition duration-300 flex items-center bg-orange-200 px-1 pl-4 pr-2 rounded-l-full disabled' onClick={currentPage !== 1 ? previousPage : ''}>
                     <span >Previous</span>
                 </p>}
-                {pageCount > 9 ?
-                    paginationArray.map(pageNum =>
-                        <span
-                            onClick={() => pageNum !== '...' ? setCurrentPage(pageNum) : ''}
-                            className={pageNum === '...' ? 'disabled' : (currentPage == pageNum ? 'bg-orange-600 text-yellow-50 rounded-full px-3 py-1' :
-                                'cursor-pointer hover:bg-orange-300 transition duration-300 bg-orange-200 rounded-full px-3 py-1')}>
-                            {pageNum}</span>) :
-                    pages.map(pageNum =>
-                        <span
-                            onClick={() => pageNum !== '...' ? setCurrentPage(pageNum) : ''}
-                            className={currentPage == pageNum ? 'bg-orange-600 text-yellow-50 rounded-full px-3 py-1' :
-                                'cursor-pointer hover:bg-orange-300 transition duration-300 bg-orange-200 rounded-full px-3 py-1'}
-                        >{pageNum}</span>)
-                }
-                {currentPage !== pageCount && <p className='cursor-pointer hover:bg-orange-300 hover:translate-x-2 transition duration-300 flex items-center bg-orange-200 px-1 pr-4 pl-2 rounded-r-full' onClick={currentPage !== pageCount ? nextPage : ''}>
-                    <span >Next</span>
-                </p>}
+                <div className="flex gap-1">
+                    {pageCount > 9 ?
+                        paginationArray.map(pageNum =>
+                            <span
+                                onClick={() => pageNum !== '...' ? setCurrentPage(pageNum) : ''}
+                                className={pageNum === '...' ? 'disabled' : (currentPage == pageNum ? 'h-full bg-orange-600 text-yellow-50 rounded-full px-3 py-1' :
+                                    'h-full cursor-pointer hover:bg-orange-300 transition duration-300 bg-orange-200 rounded-full px-3 py-1')}>
+                                {pageNum}</span>) :
+                        pages.map(pageNum =>
+                            <span
+                                onClick={() => pageNum !== '...' ? setCurrentPage(pageNum) : ''}
+                                className={currentPage == pageNum ? 'h-full bg-orange-600 text-yellow-50 rounded-full px-3 py-1' :
+                                    'h-full cursor-pointer hover:bg-orange-300 transition duration-300 bg-orange-200 rounded-full px-3 py-1'}
+                            >{pageNum}</span>)
+                    }
+                </div>
+
+                <div className="mt-3 flex gap-2 justify-center">
+                    {currentPage !== 1 && <p className='block sm:hidden cursor-pointer hover:bg-orange-300 hover:-translate-x-2 transition duration-300 flex items-center bg-orange-200 px-1 pl-4 pr-2 rounded-l-full disabled' onClick={currentPage !== 1 ? previousPage : ''}>
+                        <span >Previous</span>
+                    </p>}
+                    {currentPage !== pageCount && <p className='cursor-pointer hover:bg-orange-300 hover:translate-x-2 transition duration-300 flex items-center bg-orange-200 px-1 pr-4 pl-2 rounded-r-full' onClick={currentPage !== pageCount ? nextPage : ''}>
+                        <span >Next</span>
+                    </p>}
+                </div>
+
             </div>
 
         </div>
