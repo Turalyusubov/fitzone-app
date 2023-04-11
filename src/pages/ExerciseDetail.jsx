@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import { exercisesOptions, youtubeOptions, fetchData } from '../utils/fetchData'
 import Detail from '../components/Detail'
@@ -46,6 +47,9 @@ export default function ExerciseDetail() {
 
     return (
         <div>
+            <Helmet>
+                <title>{exerciseDetail.name + ' | FitZone'}</title>
+            </Helmet>
             <Detail exerciseDetail={exerciseDetail} />
             <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
             <SimilarExercises targetMuscleExercises={targetMuscleExercises}
