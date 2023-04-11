@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { exercisesOptions, fetchData } from '../utils/fetchData'
 import ExerciseCard from './ExerciseCard'
 import Pagination from './Pagination'
+import Loader from './Loader'
 
 export default function Exercises({ exercises, setExercises, bodyPart }) {
     const [itemsToShow, setItemsToShow] = useState([])
@@ -26,25 +27,47 @@ export default function Exercises({ exercises, setExercises, bodyPart }) {
             }
 
             setExercises(exercisesData)
+
+            if (!itemsToShowElems.length) {
+                setItemsToShow(exercises.slice(0, 8))
+            }
         }
 
         fetchExercisesData()
     }, [bodyPart])
 
+    const itemsToShowElems = itemsToShow.map((exercise, index) => (
+        <ExerciseCard key={index} exercise={exercise} />
+    ))
+
     useEffect(() => {
-        if (!itemsToShow) {
+        if (!itemsToShowElems.length) {
             setItemsToShow(exercises.slice(0, 8))
         }
     }, [])
+
+    setTimeout(() => {
+        if (!itemsToShowElems.length) {
+            setItemsToShow(exercises.slice(0, 8))
+        }
+    }, 1000)
+
+
+
+    // useEffect(() => {
+
+    // }, [bodyPart])
+
+    console.log(itemsToShowElems)
+
 
     return (
         <div className='p-4 sm:p-12' id='exercises-section'>
             <h4 className='ml-auto mr-auto capitalize text-center 
             sm:w-1/2 font-bold text-xl sm:text-2xl md:text-4xl mb-5 md:mb-12'>Showing Results</h4>
             <div className="exercises flex flex-wrap justify-center">
-                {itemsToShow.map((exercise, index) => (
-                    <ExerciseCard key={index} exercise={exercise} />
-                ))}
+                {itemsToShow.length ? itemsToShowElems : <Loader />}
+                {/* {itemsToShowElems} */}
             </div>
             <Pagination
                 data={exercises}
@@ -54,6 +77,7 @@ export default function Exercises({ exercises, setExercises, bodyPart }) {
                 setItemsToShow={setItemsToShow}
                 setPages={setPages}
                 pages={pages}
+                bodyPart={bodyPart}
             />
         </div>
     )
