@@ -6,7 +6,7 @@ export default function Loader() {
         <div className='flex items-center justify-center w-full'>
             <InfinitySpin
                 width='200'
-                color="#ea580c"
+                color="#6366f1"
             />
         </div>
     )
