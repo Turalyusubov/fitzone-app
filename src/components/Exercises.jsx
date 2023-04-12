@@ -52,22 +52,12 @@ export default function Exercises({ exercises, setExercises, bodyPart }) {
         }
     }, 1000)
 
-
-
-    // useEffect(() => {
-
-    // }, [bodyPart])
-
-    console.log(itemsToShowElems)
-
-
     return (
         <div className='p-4 sm:p-12' id='exercises-section'>
             <h4 className='ml-auto mr-auto capitalize text-center 
             sm:w-1/2 font-bold text-xl sm:text-2xl md:text-4xl mb-5 md:mb-12'>Showing Results</h4>
             <div className="exercises flex flex-wrap justify-center">
                 {itemsToShow.length ? itemsToShowElems : <Loader />}
-                {/* {itemsToShowElems} */}
             </div>
             <Pagination
                 data={exercises}

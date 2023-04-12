@@ -19,15 +19,15 @@ export default function Detail({ exerciseDetail }) {
                     and energy</p>
                 <div className="flex flex-col gap-4">
                     <span className='flex gap-3 items-center capitalize'>
-                        <BiBody className='text-orange-600 bg-orange-100 rounded-full text-5xl p-1' />
+                        <BiBody className='text-indigo-500 bg-violet-100 rounded-full text-5xl p-1' />
                         {bodyPart}
                     </span>
                     <span className='flex gap-3 items-center capitalize'>
-                        <TbTarget className='text-orange-600 bg-orange-100 rounded-full text-5xl p-1' />
+                        <TbTarget className='text-indigo-500 bg-violet-100 rounded-full text-5xl p-1' />
                         {target}
                     </span>
                     <span className='flex gap-3 items-center capitalize'>
-                        <CgGym className='text-orange-600 bg-orange-100 rounded-full text-5xl p-1' />
+                        <CgGym className='text-indigo-500 bg-violet-100 rounded-full text-5xl p-1' />
                         {equipment}
                     </span>
                 </div>

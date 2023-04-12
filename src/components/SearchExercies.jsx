@@ -55,8 +55,8 @@ export default function SearchExercies({ setExercises, bodyPart, setBodyPart }) 
                     placeholder='Search Exercises'
                 />
                 <button
-                    className='border-solid bg-orange-600 hover:bg-orange-700 transition duration-300
-                    h-10 p-2 rounded-r-lg text-yellow-50 w-2/6 md:w-1/6 xl:w-1/12'
+                    className='border-solid bg-indigo-500 hover:bg-indigo-700 transition duration-300
+                    h-10 p-2 rounded-r-lg text-indigo-50 w-2/6 md:w-1/6 xl:w-1/12'
                     onClick={handleSearch}
                 >Search</button>
             </div>

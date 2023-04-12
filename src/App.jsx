@@ -9,7 +9,7 @@ import Home from "./pages/Home"
 
 function App() {
   return (
-    <div className="App bg-yellow-50 text-stone-800 scroll-smooth">
+    <div className="App bg-gray-100 text-cyan-900 scroll-smooth">
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

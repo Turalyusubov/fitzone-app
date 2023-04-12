@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import BodyPart from './BodyPart'
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import ExerciseCard from './ExerciseCard';
 
 export default function HorizontalScrollBar({ data, bodyPart, setBodyPart, isBodyParts }) {
     const scrollBarRef = useRef(null);
@@ -37,13 +36,13 @@ export default function HorizontalScrollBar({ data, bodyPart, setBodyPart, isBod
             </div>
             <div className="arrows flex justify-center gap-10 mt-10">
                 <div
-                    className="left-arrow text-orange-600 text-4xl cursor-pointer"
+                    className="left-arrow text-indigo-500 text-4xl cursor-pointer"
                     onClick={handleLeftArrowClick}
                 >
                     <BsArrowLeft />
                 </div>
                 <div
-                    className="right-arrow text-orange-600 text-4xl cursor-pointer"
+                    className="right-arrow text-indigo-500 text-4xl cursor-pointer"
                     onClick={handleRightArrowClick}
                 >
                     <BsArrowRight />
